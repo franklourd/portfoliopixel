@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080b0a">
+<meta name="description" content="Franklourd Pareja — an interactive pixel-game portfolio.">
+<meta property="og:title" content="Franklourd.exe — Pixel Adventure Portfolio">
+<meta property="og:description" content="Explore Franklourd Pareja's interactive portfolio world.">
+<meta property="og:type" content="website">
+<title>Franklourd.exe — Pixel Adventure Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Silkscreen:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<div class="scanlines" aria-hidden="true"></div><div class="noise" aria-hidden="true"></div>
+<div class="game-frame">
+  <header class="topbar">
+    <a class="logo" href="#" aria-label="Home"><span class="logo-icon">FP</span><span>FRANKLOURD<span class="mint">.EXE</span></span></a>
+    <div class="top-status"><span class="live-dot"></span> PLAYER ONLINE <span class="divider">/</span> IT STUDENT</div>
+    <nav class="top-nav" aria-label="Primary navigation">
+      <a href="#game-area">WORLD</a>
+      <a href="#quest-log">QUESTS</a>
+      <a class="top-mail" href="mailto:franklourdpareja77@gmail.com">CONTACT <b>↗</b></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div class="intro-left">
+        <p class="tiny-label">✦ PORTFOLIO QUEST / SAVE FILE 001</p>
+        <h1>HELLO,<br><span class="mint">PLAYER.</span></h1>
+        <p class="intro-copy">I'm <strong>Franklourd Pareja</strong>, an IT student turning curiosity into practical projects, thoughtful interfaces, and stories worth exploring.</p>
+        <div class="intro-actions"><button class="pixel-btn primary" id="start-btn">▶ START GAME</button><a class="pixel-btn secondary" href="https://github.com/franklourd" target="_blank" rel="noopener noreferrer">◈ VIEW GITHUB</a></div>
+      </div>
+      <div class="hero-art" aria-label="Pixel art game scene">
+        <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+        <div class="mountain mountain-back"></div><div class="mountain mountain-front"></div>
+        <div class="platform"><span class="platform-top"></span><span class="platform-side"></span></div>
+        <div class="hero-sprite" aria-label="Pixel adventurer"><i></i><b></b><em></em></div>
+        <div class="floating-star star-one">✦</div><div class="floating-star star-two">✧</div>
+        <span class="art-coord">WORLD 01 — THE BEGINNING</span>
+      </div>
+    </section>
+
+    <section class="game-area" id="game-area">
+      <div class="game-heading"><div><p class="tiny-label">✦ MAIN WORLD</p><h2>CHOOSE YOUR <span class="mint">DESTINATION</span></h2></div><div class="level-badge">LVL <b>01</b><span> / EXPLORER</span></div></div>
+      <div class="hud">
+      <div class="player-info"><div class="avatar">FP</div><div><b>PLAYER_01</b><small>FRANKLOURD PAREJA</small></div></div>
+      <div class="health"><small>EXPERIENCE <b id="xp-count">0/12</b></small><div class="xp-track" role="progressbar" aria-label="Crystal experience" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><span id="xp-fill"></span></div></div>
+      <div class="coin-counter"><small>CRYSTALS</small><b><span class="coin-icon">◆</span> <span id="coin-count">0</span>/12</b></div>
+        <div class="coordinates"><small>POSITION</small><b id="coords">X: 08 / Y: 06</b></div>
+      </div>
+      <div class="game-screen">
+        <div class="screen-top"><span><i class="live-dot"></i> WORLD MAP</span><span>WASD / ARROWS TO MOVE&nbsp;&nbsp; • &nbsp;&nbsp;ENTER TO INTERACT</span><span><b id="map-clock">06:40 AM</b> <button class="map-pause" id="map-pause" type="button" aria-label="Pause game">Ⅱ</button></span></div>
+        <div class="world">
+          <div class="world-camera" id="world-camera">
+          <div class="world-particles" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="collectible crystal-a" data-crystal="0"></div>
+          <div class="collectible crystal-b" data-crystal="1"></div>
+          <div class="collectible crystal-c" data-crystal="2"></div>
+          <div class="collectible crystal-d" data-crystal="3"></div>
+          <div class="collectible crystal-e" data-crystal="4"></div>
+          <div class="collectible crystal-f" data-crystal="5"></div>
+          <div class="collectible crystal-g" data-crystal="6"></div>
+          <div class="collectible crystal-h" data-crystal="7"></div>
+          <div class="collectible crystal-i" data-crystal="8"></div>
+          <div class="collectible crystal-j" data-crystal="9"></div>
+          <div class="collectible crystal-k" data-crystal="10"></div>
+          <div class="collectible crystal-l" data-crystal="11"></div>
+          <div class="objective-arrow" id="objective-arrow">▼</div>
+          <div class="tile-grid" id="tile-grid" aria-label="Interactive game map"></div>
+          <div class="world-depth edge-north"></div>
+          <div class="world-depth edge-south"></div>
+          <div class="grass-tuft tuft-a"></div><div class="grass-tuft tuft-b"></div>
+          <div class="grass-tuft tuft-c"></div><div class="grass-tuft tuft-d"></div>
+          <div class="grass-tuft tuft-e"></div><div class="grass-tuft tuft-f"></div>
+          <div class="flower-patch flowers-a"><i></i><i></i><i></i></div>
+          <div class="flower-patch flowers-b"><i></i><i></i><i></i></div>
+          <div class="world-npc npc-guide"><span>!</span><i></i></div>
+          <div class="world-npc npc-coder"><span>?</span><i></i></div>
+          <div class="map-decor decor-tree tree-a">♣</div><div class="map-decor decor-tree tree-b">♣</div>
+          <div class="map-decor decor-rock rock-a">◆</div><div class="map-decor decor-rock rock-b">◆</div>
+          <div class="map-decor signpost">⌑<small>WELCOME</small></div>
+          <div class="world-path path-main"></div><div class="world-path path-cross"></div>
+          <div class="world-water"><span></span><span></span><span></span></div>
+          <div class="map-lamp lamp-a"><i></i></div><div class="map-lamp lamp-b"><i></i></div>
+          <div class="map-bench bench-a"><i></i></div><div class="map-bench bench-b"><i></i></div>
+          <div class="world-mountains"></div>
+          <div class="portal portal-about" data-destination="about"><span class="portal-ring"></span><b>01</b><small>ABOUT</small></div>
+          <div class="portal portal-projects" data-destination="projects"><span class="portal-ring"></span><b>02</b><small>PROJECTS</small></div>
+          <div class="portal portal-bdrms" data-destination="bdrms"><span class="portal-ring"></span><b>03</b><small>MINI UNIVERSITY LIBRARY SYSTEM</small></div>
+          <div class="portal portal-socials" data-destination="socials"><span class="portal-ring"></span><b>04</b><small>SOCIALS</small></div>
+          <div class="portal portal-lab" data-destination="lab"><span class="portal-ring"></span><b>05</b><small>EXPERIMENTS</small></div>
+          <div class="dungeon-gate sealed" data-destination="dungeon" role="button" tabindex="0" aria-label="Dungeon sealed. Collect 12 crystals to enter.">
+            <span class="dungeon-sign">D-06 / SEALED</span>
+            <span class="dungeon-door"><i></i><b></b></span>
+            <small>COLLECT 12 CRYSTALS</small>
+          </div>
+          <div class="dungeon-boss" aria-hidden="true"><span class="boss-crown">◆</span><i></i><b>THE SHADOW</b></div>
+          <div class="player" id="player" role="img" aria-label="Player character"><span class="player-shadow"></span><span class="player-body"><i class="hair"></i><i class="face"></i><i class="shirt"></i><i class="legs"></i></span><span class="player-name">YOU</span></div>
+          </div>
+          <div class="world-vignette"></div>
+          <div class="dialogue-box" id="dialogue-box" role="status" aria-live="polite"><b id="dialogue-name">MAP GUIDE</b><p id="dialogue-text">Collect crystals, then explore every glowing portal.</p><span>A</span></div>
+          <div class="game-toast" id="game-toast" role="status" aria-live="polite"></div>
+          <div class="map-message" id="map-message" role="status" aria-live="polite">Find a portal and press ENTER</div>
+        </div>
+        <div class="screen-bottom"><span>◈ EXPLORE THE MAP TO UNLOCK MY STORY</span><span>FPS <b>60</b> <i class="live-dot"></i></span></div>
+      </div>
+      <div class="game-controls"><div class="dpad"><span class="dpad-label">MOVE</span><button data-move="up" aria-label="Move up">▲</button><div><button data-move="left" aria-label="Move left">◀</button><button data-move="down" aria-label="Move down">▼</button><button data-move="right" aria-label="Move right">▶</button></div></div><div class="control-hint"><span class="keycap">W</span><span class="keycap">A</span><span class="keycap">S</span><span class="keycap">D</span><span>or arrow keys to move</span><span class="keycap enter-key">ENTER</span><span>interact with nearby portals</span></div><button class="pixel-btn sound-btn" id="sound-btn" aria-label="Toggle music and sound" aria-pressed="false">♫ MUSIC: OFF</button></div>
+    </section>
+
+    <section class="quest-log" id="quest-log">
+      <div><p class="tiny-label">✦ ACTIVE QUEST</p><h3 id="quest-title">THE FIRST EXPLORATION</h3><p id="quest-description">Explore every destination and descend into the Quiet Dungeon.</p></div>
+      <div class="quest-progress"><span>QUEST PROGRESS</span><div class="quest-track"><i id="quest-fill"></i></div><b id="quest-count">0 / 6 DESTINATIONS</b><button class="reset-progress" id="reset-progress" type="button">RESET SAVE</button></div>
+    </section>
+  </main>
+  <footer><span>© 2026 FRANKLOURD PAREJA</span><span>BUILT WITH <b>♥</b> AND A LITTLE PIXEL MAGIC</span><a href="mailto:franklourdpareja77@gmail.com">SEND A MESSAGE ↗</a></footer>
+</div>
+
+<div class="level-overlay" id="level-overlay" role="dialog" aria-modal="true" aria-labelledby="level-title" aria-hidden="true">
+  <div class="level-window">
+    <div class="window-bar"><span><i class="live-dot"></i> NEW AREA DISCOVERED</span><button id="close-level" aria-label="Close">✕</button></div>
+    <div class="level-content">
+      <div class="level-art"><div class="pixel-orb" id="level-symbol">♚</div><span id="level-index">AREA 01</span></div>
+      <div class="level-copy"><p class="tiny-label" id="level-kicker">PLAYER PROFILE</p><h2 id="level-title">ABOUT ME</h2><p id="level-description"></p><div class="level-links" id="level-links"></div><button class="pixel-btn primary return-btn" id="return-btn">↶ BACK TO WORLD</button></div>
+    </div>
+    <div class="dungeon-arena" id="dungeon-arena" aria-label="The Shadow dungeon boss encounter">
+      <div class="dungeon-stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="dungeon-floor" aria-hidden="true"></div>
+      <div class="shadow-boss" id="shadow-boss" role="img" aria-label="The Shadow, a moving pixel boss">
+        <span class="shadow-crown"></span>
+        <span class="shadow-halo"></span>
+        <span class="shadow-head"><i class="shadow-eye left"></i><i class="shadow-eye right"></i><span id="shadow-mouth" class="shadow-mouth" data-viseme="closed"></span></span>
+        <span class="shadow-cloak"><i></i><b></b></span>
+        <span class="shadow-weapon"></span>
+      </div>
+      <div class="boss-health"><span>BOSS</span><div><i></i></div><b>THE SHADOW</b></div>
+      <button id="boss-voice" class="voice-control" type="button" aria-label="Mute boss voice" aria-pressed="true">VOICE: ON</button>
+      <div class="boss-dialogue" role="status" aria-live="polite">
+        <span class="speaker">THE SHADOW</span>
+        <p id="boss-story"></p>
+        <button id="boss-next" type="button">CONTINUE <b>›</b></button>
+        <span id="boss-voice-status" class="visually-hidden" role="status" aria-live="polite"></span>
+      </div>
+    </div>
+    <div class="window-foot"><span>PRESS ESC TO RETURN</span><span>AREA UNLOCKED <b>✦</b></span></div>
+  </div>
+</div>
+</body>
+</html>
